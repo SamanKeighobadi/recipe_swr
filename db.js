@@ -9,6 +9,7 @@ module.exports = () =>{
             id:faker.datatype.uuid(),
             title:faker.name.firstName(),
             slug:faker.lorem.slug(),
+            img:faker.image.food(),
         })    
     }
     return data;
