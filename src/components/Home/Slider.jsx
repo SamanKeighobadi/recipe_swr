@@ -2,15 +2,14 @@ import axios from "axios";
 import React from "react";
 import useSWR from "swr";
 import Loading from "../common/Loading";
-import { Carousel,Container } from "react-bootstrap";
+import { Carousel, Container } from "react-bootstrap";
 
 const Slider = () => {
-
   const fetcher = (...args) => axios.get(args).then((res) => res.data);
   const { data: sliders, error } = useSWR(
     "http://localhost:9000/slider",
     fetcher,
-    {}
+    
   );
   // console.log(sliders);
   if (error) return <h1>{error.message}</h1>;
@@ -18,10 +17,10 @@ const Slider = () => {
 
   return (
     <Container>
-      <Carousel style={{height:400}}>
+      <Carousel style={{ height: 400 }}>
         {sliders.length > 0 &&
           sliders.map((slider) => (
-            <Carousel.Item key={slider.id} style={{height:400}} >
+            <Carousel.Item key={slider.id} style={{ height: 400 }}>
               <img
                 className="d-block w-100 h-100"
                 src={slider.img}
