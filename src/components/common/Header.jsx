@@ -14,7 +14,7 @@ const Header = () => {
               <Nav.Link as={Link} to={"/"}>
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/recpies">
+              <Nav.Link as={Link} to="/last_recpies">
                 Recpies
               </Nav.Link>
               <Nav.Link as={Link} to="/popular">

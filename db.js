@@ -12,7 +12,7 @@ module.exports = () => {
       img: faker.image.food(),
     });
   }
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 15; i++) {
     data.newest_recipes.push({
       id: faker.datatype.uuid(),
       title: faker.name.firstName(),
@@ -21,7 +21,7 @@ module.exports = () => {
     });
   }
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 10; i++) {
     data.popular_recipes.push({
       id: faker.datatype.uuid(),
       title: faker.name.firstName(),

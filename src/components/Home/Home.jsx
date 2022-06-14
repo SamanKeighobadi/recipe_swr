@@ -2,14 +2,14 @@ import React from "react";
 import Slider from "./Slider";
 import useSWR from "swr";
 import axios from "axios";
-import Loading from "../common/Loading";
+// import Loading from "../common/Loading";
 // Bootstrap components
 import { Row, Container } from "react-bootstrap";
 import Recipes from "../Recipes/Recipes";
 
 const Home = () => {
   const fetcher = (...args) => axios.get(args).then((res) => res.data);
-  const { data: last_recipes, error } = useSWR(
+  const { data: last_recipes } = useSWR(
     "http://localhost:9000/newest_recipes",
     fetcher,{suspense:true}
   );
@@ -22,8 +22,6 @@ const Home = () => {
   console.log("popular", popular_recipes);
   console.log("latest", last_recipes);
 
-  // if (error) return <h1>{error.message}</h1>;
-  // if (!last_recipes || !popular_recipes) return <Loading />;
 
   return (
     <Container>
