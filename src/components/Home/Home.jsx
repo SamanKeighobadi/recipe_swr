@@ -11,19 +11,19 @@ const Home = () => {
   const fetcher = (...args) => axios.get(args).then((res) => res.data);
   const { data: last_recipes, error } = useSWR(
     "http://localhost:9000/newest_recipes",
-    fetcher
+    fetcher,{suspense:true}
   );
 
   const { data: popular_recipes } = useSWR(
     " http://localhost:9000/popular_recipes",
-    fetcher
+    fetcher,{suspense:true}
   );
 
   console.log("popular", popular_recipes);
   console.log("latest", last_recipes);
 
-  if (error) return <h1>{error.message}</h1>;
-  if (!last_recipes || !popular_recipes) return <Loading />;
+  // if (error) return <h1>{error.message}</h1>;
+  // if (!last_recipes || !popular_recipes) return <Loading />;
 
   return (
     <Container>
