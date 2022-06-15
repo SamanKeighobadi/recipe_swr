@@ -14,9 +14,11 @@ const Header = () => {
               <Nav.Link as={Link} to={"/"}>
                 Home
               </Nav.Link>
+              {/* Lates Recipe Post  */}
               <Nav.Link as={Link} to="/last_recpies">
                 Recpies
               </Nav.Link>
+              {/* Popular Recipes  */}
               <Nav.Link as={Link} to="/popular">
                 Popular Recpies
               </Nav.Link>
