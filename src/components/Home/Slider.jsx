@@ -1,19 +1,10 @@
-import axios from "axios";
 import React from "react";
 import useSWR from "swr";
-import Loading from "../common/Loading";
+// Bootstrap components
 import { Carousel, Container } from "react-bootstrap";
 
 const Slider = () => {
-  const fetcher = (...args) => axios.get(args).then((res) => res.data);
-  const { data: sliders, error } = useSWR(
-    "http://localhost:9000/slider",
-    fetcher,
-    
-  );
-  // console.log(sliders);
-  if (error) return <h1>{error.message}</h1>;
-  if (!sliders) return <Loading />;
+  const { data: sliders } = useSWR("http://localhost:9000/slider");
 
   return (
     <Container>

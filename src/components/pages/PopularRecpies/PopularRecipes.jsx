@@ -1,13 +1,12 @@
-import axios from "axios";
+
 import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
 import useSWR from "swr";
+// Bootstrap components
+import { Card, Col, Row } from "react-bootstrap";
 
 const PopularRecipes = () => {
-  const fetcher = (...args) => axios.get(args).then((res) => res.data);
-  const { data } = useSWR("http://localhost:9000/newest_recipes", fetcher, {
-    suspense: true,
-  });
+  
+  const { data } = useSWR("http://localhost:9000/newest_recipes");
 
   return (
     <div>
