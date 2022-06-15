@@ -2,6 +2,8 @@ import React from "react";
 import Recipe from "./Recipe";
 // Bootstrap components
 import { Card, Row, Col } from "react-bootstrap";
+// prop types
+import PropTypes from 'prop-types';
 
 const Recipes = ({recipes}) => {
   
@@ -21,5 +23,10 @@ const Recipes = ({recipes}) => {
     </div>
   );
 };
+
+// PropTypes
+Recipes.propTypes = {
+  recipes:PropTypes.arrayOf(PropTypes.object)
+}
 
 export default Recipes;
