@@ -2,9 +2,11 @@ import React from "react";
 import useSWR from "swr";
 // Bootstrap components
 import { Carousel, Container } from "react-bootstrap";
+// Config
+import {BASE_URL} from '../utils/config'
 
 const Slider = () => {
-  const { data: sliders } = useSWR("http://localhost:9000/slider");
+  const { data: sliders } = useSWR(`${BASE_URL}/slider`);
 
   return (
     <Container>

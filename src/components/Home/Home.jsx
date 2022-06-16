@@ -3,14 +3,17 @@ import useSWR from "swr";
 
 // Bootstrap components
 import { Row, Container } from "react-bootstrap";
+// Custom components
 import Recipes from "../Recipes/Recipes";
 import Slider from "./Slider";
+// Config 
+import {BASE_URL} from '../utils/config'
 
 const Home = () => {
-  const { data: last_recipes } = useSWR("http://localhost:9000/newest_recipes");
+  const { data: last_recipes } = useSWR(`${BASE_URL}/newest_recipes`);
 
   const { data: popular_recipes } = useSWR(
-    " http://localhost:9000/popular_recipes"
+    `${BASE_URL}/popular_recipes`
   );
 
   console.log("popular", popular_recipes);

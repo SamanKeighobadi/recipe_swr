@@ -3,10 +3,12 @@ import React from "react";
 import useSWR from "swr";
 // Bootstrap components
 import { Card, Col, Row } from "react-bootstrap";
+// Config
+import {BASE_URL} from '../../utils/config'
 
 const PopularRecipes = () => {
   
-  const { data } = useSWR("http://localhost:9000/newest_recipes");
+  const { data } = useSWR(`${BASE_URL}/newest_recipes`);
 
   return (
     <div>

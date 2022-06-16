@@ -8,12 +8,14 @@ import PopularRecipes from "./components/pages/PopularRecpies/PopularRecipes";
 // SWR and axios
 import { SWRConfig } from "swr";
 import axios from "axios";
+import middleware from "./components/middleware/middleware";
 
 function App() {
   return (
     <MainLayout>
       <SWRConfig
         value={{
+          use:[middleware],
           suspense: true,
           refreshInterval: 3000,
           errorRetryInterval: false,
