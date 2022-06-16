@@ -1,6 +1,5 @@
 import React from "react";
 import useSWR from "swr";
-
 // Bootstrap components
 import { Row, Container } from "react-bootstrap";
 // Custom components

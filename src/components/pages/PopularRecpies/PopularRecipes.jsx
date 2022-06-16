@@ -4,6 +4,8 @@ import useSWR from "swr";
 import { Card, Col, Row, Pagination } from "react-bootstrap";
 // Config
 import { BASE_URL } from "../../utils/config";
+// img
+import img from '../../assets/images/img2.jpg'
 
 const PopularRecipes = () => {
   const [pageIndex, setPageIndex] = useState(1);
@@ -20,6 +22,7 @@ const PopularRecipes = () => {
           data.map((rec) => (
             <Col md={6} sm={12} lg={4} key={rec.id} className="my-2">
               <Card>
+                <Card.Img variant="top" src={img} />
                 <Card.Body className="d-flex justify-content-center  flex-column">
                   <Card.Title>{rec.title}</Card.Title>
                   <Card.Text>{rec.text.slice(0, 50)}</Card.Text>

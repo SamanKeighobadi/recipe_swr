@@ -4,6 +4,8 @@ import useSWR from "swr";
 import { Row, Col, Card } from "react-bootstrap";
 // Config
 import { BASE_URL } from "../../utils/config";
+// img
+import img from '../../assets/images/slider1.jpg'
 
 const LastRecpies = () => {
   const { data } = useSWR(`${BASE_URL}/newest_recipes`);
@@ -16,6 +18,7 @@ const LastRecpies = () => {
           data.map((rec) => (
             <Col md={6} sm={12} lg={4} key={rec.id} className="my-2">
               <Card>
+              <Card.Img variant="top" src={img} />
                 <Card.Body className="d-flex justify-content-center  flex-column">
                   <Card.Title>{rec.title}</Card.Title>
                   <Card.Text>{rec.text.slice(0,50)}</Card.Text>

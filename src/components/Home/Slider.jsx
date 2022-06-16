@@ -3,7 +3,9 @@ import useSWR from "swr";
 // Bootstrap components
 import { Carousel, Container } from "react-bootstrap";
 // Config
-import {BASE_URL} from '../utils/config'
+import { BASE_URL } from "../utils/config";
+// images
+import img from "../assets/images/slider3.jpg";
 
 const Slider = () => {
   const { data: sliders } = useSWR(`${BASE_URL}/slider`);
@@ -16,7 +18,7 @@ const Slider = () => {
             <Carousel.Item key={slider.id} style={{ height: 400 }}>
               <img
                 className="d-block w-100 h-100"
-                src={slider.img}
+                src={img}
                 alt={slider.title}
               />
               <Carousel.Caption>

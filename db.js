@@ -1,6 +1,4 @@
-// import {faker} from '@faker-js/faker'
 const { faker } = require("@faker-js/faker");
-// const faker = require('faker');
 
 module.exports = () => {
   const data = { slider: [], newest_recipes: [], popular_recipes: [] };
@@ -9,7 +7,6 @@ module.exports = () => {
       id: faker.datatype.uuid(),
       title: faker.name.firstName(),
       slug: faker.lorem.slug(),
-      img: faker.image.food(),
     });
   }
   for (let i = 0; i < 15; i++) {
