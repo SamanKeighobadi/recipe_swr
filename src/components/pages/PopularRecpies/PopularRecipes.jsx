@@ -1,30 +1,40 @@
-
-import React from "react";
+import React, { useState } from "react";
 import useSWR from "swr";
 // Bootstrap components
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Row, Pagination } from "react-bootstrap";
 // Config
-import {BASE_URL} from '../../utils/config'
+import { BASE_URL } from "../../utils/config";
 
 const PopularRecipes = () => {
-  
-  const { data } = useSWR(`${BASE_URL}/newest_recipes`);
+  const [pageIndex, setPageIndex] = useState(1);
+
+  const { data } = useSWR(
+    `${BASE_URL}/newest_recipes?_page=${pageIndex}&_limit=10`
+  );
 
   return (
     <div>
       <Row className="my-5 px-4">
+        <h1 className="mb-2">Popular Recipes</h1>
         {data.length > 0 &&
           data.map((rec) => (
             <Col md={6} sm={12} lg={4} key={rec.id} className="my-2">
               <Card>
-                <Card.Header className="">{rec.title}</Card.Header>
                 <Card.Body className="d-flex justify-content-center  flex-column">
-                  <Card.Text>{rec.text}</Card.Text>
-                  <Card.Subtitle>{rec.date}</Card.Subtitle>
+                  <Card.Title>{rec.title}</Card.Title>
+                  <Card.Text>{rec.text.slice(0, 50)}</Card.Text>
                 </Card.Body>
+                <Card.Footer>
+                  <Card.Subtitle>{rec.date}</Card.Subtitle>
+                </Card.Footer>
               </Card>
             </Col>
           ))}
+        <Pagination>
+          <Pagination.Prev onClick={() => setPageIndex(pageIndex - 1)} />
+
+          <Pagination.Next onClick={() => setPageIndex(pageIndex + 1)} />
+        </Pagination>
       </Row>
     </div>
   );
