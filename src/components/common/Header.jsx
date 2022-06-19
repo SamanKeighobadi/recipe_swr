@@ -23,6 +23,13 @@ const Header = () => {
                 Popular Recpies
               </Nav.Link>
             </Nav>
+
+          <Nav>
+            <Nav.Link as={Link} to={"/admin"} >
+              Admin
+            </Nav.Link>
+          </Nav>
+
           </Navbar.Collapse>
         
       </Navbar>

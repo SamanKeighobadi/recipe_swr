@@ -9,6 +9,7 @@ import PopularRecipes from "./components/pages/PopularRecpies/PopularRecipes";
 import { SWRConfig } from "swr";
 import axios from "axios";
 import middleware from "./components/middleware/middleware";
+import Admin from "./components/pages/Admin/Admin";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/last_recpies" element={<LastRecpies />} />
           <Route path="/popular" element={<PopularRecipes />} />
         </Routes>
