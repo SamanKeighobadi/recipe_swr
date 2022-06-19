@@ -1,16 +1,17 @@
 import React from "react";
+// Bootstrap components
 import { Form, Row, Col, Card, Button } from "react-bootstrap";
+// prop types
+import PropTypes from 'prop-types';
 
-const AdminForm = () => {
+const AdminForm = ({ authAdmin }) => {
   return (
     <Row>
-      <Col md={4} className="mx-auto">
+      <Col md={4} className="mx-auto mt-5">
         <Card>
-            <Card.Header>
-                Validation admin
-            </Card.Header>
+          <Card.Header>Validation admin</Card.Header>
           <Card.Body>
-            <Form>
+            <Form onSubmit={authAdmin}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Username</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" />
@@ -34,5 +35,10 @@ const AdminForm = () => {
     </Row>
   );
 };
+
+// prop types
+AdminForm.propTyps ={
+    authAdmin: PropTypes.func,
+}
 
 export default AdminForm;
