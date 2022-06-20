@@ -10,7 +10,7 @@ const Users = ({ users }) => {
     <Row className="mt-5">
       {users.length > 0 &&
         users.map((user) => (
-          <Col md={3} key={user.id} className="px-3">
+          <Col md={3} key={user.id} className="px-5">
             <User {...user} />
           </Col>
         ))}
