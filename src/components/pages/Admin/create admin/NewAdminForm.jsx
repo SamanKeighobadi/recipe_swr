@@ -26,7 +26,7 @@ const NewAdminForm = ({addAdmin}) => {
                 placeholder="saman keighobadi"
               />
             </Form.Group>
-            <Button type="submit" vairant="primary">
+            <Button type="submit" vairant="primary"  >
               submit
             </Button>
           </Form>

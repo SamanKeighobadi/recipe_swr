@@ -19,13 +19,17 @@ const NewAdmin = () => {
     axios.post(`${BASE_URL}/admin`, newAdmin);
   };
 
+  const deleteAdmin = (id) => {
+    axios.delete(`${BASE_URL}/admin/${id}`);
+  };
+
   return (
     <Row>
       <Col md={4}>
         <NewAdminForm addAdmin={addAdmin} />
       </Col>
       <Col md={8}>
-        <AdminList />
+        <AdminList deleteAdmin={deleteAdmin} />
       </Col>
     </Row>
   );
