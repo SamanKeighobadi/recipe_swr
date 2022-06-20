@@ -1,13 +1,8 @@
 import React from "react";
-// data fetching
-import useSWR from "swr";
-import { BASE_URL } from "../../../utils/config";
+// prop types
+import PropTypes from 'prop-types';
 
-const AdminList = ({deleteAdmin}) => {
-  const { data: admins } = useSWR(`${BASE_URL}/admin`, {
-    refreshInterval: 0,
-  });
-
+const AdminList = ({ deleteAdmin, admins }) => {
   return (
     <div>
       <table className="table table-striped table-hover">
@@ -22,8 +17,8 @@ const AdminList = ({deleteAdmin}) => {
             <tr key={admin.id}>
               <th>{admin.fullname}</th>
               <th> {admin.email} </th>
-              <th onClick={() => deleteAdmin(admin.id)}  >
-                  <button className="btn btn-danger btn-sm">delete</button>
+              <th onClick={() => deleteAdmin(admin.id)}>
+                <button className="btn btn-danger btn-sm">delete</button>
               </th>
             </tr>
           ))}
@@ -32,5 +27,11 @@ const AdminList = ({deleteAdmin}) => {
     </div>
   );
 };
+
+// propTypes 
+AdminList.propTypes ={
+    deleteAdmin:PropTypes.func,
+    admins:PropTypes.arrayOf(PropTypes.object)
+}
 
 export default AdminList;

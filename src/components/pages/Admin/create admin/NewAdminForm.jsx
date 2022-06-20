@@ -1,6 +1,8 @@
 import React from "react";
 // Bootstrap components
 import { Card, Form, Button } from "react-bootstrap";
+// prop types
+import PropTypes from 'prop-types';
 
 const NewAdminForm = ({addAdmin}) => {
   return (
@@ -35,5 +37,9 @@ const NewAdminForm = ({addAdmin}) => {
     </div>
   );
 };
+
+NewAdminForm.propTypes = {
+  addAdmin:PropTypes.func
+}
 
 export default NewAdminForm;
