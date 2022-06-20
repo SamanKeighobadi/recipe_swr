@@ -6,7 +6,7 @@ module.exports = () => {
     newest_recipes: [],
     popular_recipes: [],
     users: [],
-    adimn: [],
+    admin: [],
   };
   // @desc slider item
   // @route /slider

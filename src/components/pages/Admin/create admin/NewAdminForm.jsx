@@ -1,13 +1,13 @@
 import React from "react";
 // Bootstrap components
-import {Card,Form} from 'react-bootstrap'
+import { Card, Form, Button } from "react-bootstrap";
 
-const NewAdminForm = () => {
+const NewAdminForm = ({addAdmin}) => {
   return (
     <div>
       <Card>
         <Card.Body>
-          <Form onSubmit={(e) => e.preventDefault()}>
+          <Form onSubmit={addAdmin}>
             <Form.Group>
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -26,15 +26,9 @@ const NewAdminForm = () => {
                 placeholder="saman keighobadi"
               />
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                name="password"
-                id={"password"}
-                placeholder="*******"
-              />
-            </Form.Group>
+            <Button type="submit" vairant="primary">
+              submit
+            </Button>
           </Form>
         </Card.Body>
       </Card>
