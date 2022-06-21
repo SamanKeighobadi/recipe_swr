@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 // styles
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-to"
 import "./index.css";
 // custom components
 import ErrorBoundary from "./components/Error/ErrorBoundary";
