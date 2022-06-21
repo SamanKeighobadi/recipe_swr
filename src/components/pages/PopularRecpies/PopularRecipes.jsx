@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import useSWR from "swr";
 // Bootstrap components
-import { Card, Col, Row, Pagination } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 // Config
 import { BASE_URL } from "../../utils/config";
 // img
-import img from '../../assets/images/img2.jpg'
+import img from "../../assets/images/img2.jpg";
 
 const PopularRecipes = () => {
-  const [pageIndex, setPageIndex] = useState(1);
-
-  const { data } = useSWR(
-    `${BASE_URL}/newest_recipes?_page=${pageIndex}&_limit=10`
-  );
+  const { data } = useSWR(`${BASE_URL}/newest_recipes`);
 
   return (
     <div>
@@ -33,11 +29,6 @@ const PopularRecipes = () => {
               </Card>
             </Col>
           ))}
-        <Pagination>
-          <Pagination.Prev onClick={() => setPageIndex(pageIndex - 1)} />
-
-          <Pagination.Next onClick={() => setPageIndex(pageIndex + 1)} />
-        </Pagination>
       </Row>
     </div>
   );
