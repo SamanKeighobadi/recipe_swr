@@ -1,12 +1,14 @@
 import React from "react";
-import NewAdminForm from "./NewAdminForm";
+import {toast} from 'react-toastify'
 // Bootstrap components
 import { Row, Col } from "react-bootstrap";
-import AdminList from "./AdminList";
-// axios
+// SWR and data feching
 import axios from "axios";
 import { BASE_URL } from "../../../utils/config";
 import useSWR from "swr";
+// custom components
+import AdminList from "./AdminList";
+import NewAdminForm from "./NewAdminForm";
 
 const NewAdmin = () => {
   const { data,mutate } = useSWR(`${BASE_URL}/admin`, {
@@ -22,6 +24,12 @@ const NewAdmin = () => {
       email: data.get("email"),
     };
     axios.post(`${BASE_URL}/admin`, newAdmin);
+    // toast notif
+    toast.success("Admin created",{
+      pauseOnHover:false,
+      theme:"colored",
+      position:"top-right"
+    })
   };
 
   /**
@@ -30,6 +38,12 @@ const NewAdmin = () => {
    */
   const deleteAdmin = (id) => {
     axios.delete(`${BASE_URL}/admin/${id}`);
+    // toast notif
+    toast.success("Admin deleted",{
+      pauseOnHover:false,
+      theme:"colored",
+      position:"top-right"
+    })
   };
 
   return (
