@@ -1,6 +1,6 @@
-#Recipes webstie with React.js and SWR 
+# Recipes webstie with React.js and SWR 
 
-### food recipes website with category and admin page for manage admins , feching data with swr and json server
+food recipes website with category and admin page for manage admins , feching data with swr and json server
 
 ## what packges used? :
 
